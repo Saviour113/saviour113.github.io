@@ -1,0 +1,17 @@
+/* 导航栏列表项悬停效果 */
+.nav li:hover {
+    border-bottom: 1px solid #0a69e6; /* 设置列表项悬停时底部边框为1px红色 */
+}
+
+/* 导航栏链接悬停效果 */
+.nav-link:hover{
+    font-size: 150%;
+    transition: 1s;
+    color: #7bb2ec;
+    text-decoration: none;
+    transition-delay: 0.3s;
+}
+
+.nav-link:hover{
+    
+}

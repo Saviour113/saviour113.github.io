@@ -1,0 +1,4 @@
+.container-flex {
+    display: flex; /* 设置容器为flex布局 */
+    justify-content: space-between; /* 设置子元素水平间距为头尾平均分布 */
+}

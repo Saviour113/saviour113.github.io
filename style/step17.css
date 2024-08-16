@@ -1,0 +1,6 @@
+/* 当屏幕宽度小于或等于768px时，应用以下样式 */
+@media (max-width: 768px) {
+    .nav ul:last-child {
+        display: none; /* 隐藏导航栏最后一个ul元素 */
+    }
+}

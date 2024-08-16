@@ -1,0 +1,15 @@
+/* 引用区块的左引号 */
+blockquote::before {
+    font-family: Arial; /* 设置字体为Arial */
+    content: "\201C"; /* 设置内容为左引号 */
+    color: #78C0A8; /* 设置颜色为蓝色 */
+    font-size: 64px; /* 设置字号为64px */
+    position: absolute; /* 设置绝对定位 */
+    left: 10px; /* 设置距离左侧10px */
+    top: -10px; /* 设置距离上方-10px */
+}
+
+/* 引用区块的右引号 */
+blockquote::after {
+    content: ''; /* 设置内容为空 */
+}

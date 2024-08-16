@@ -1,0 +1,10 @@
+.name {
+    margin-bottom: 12px; /* 设置用户名下方外边距为12px */
+}
+
+.bio {
+    color: rgb(255, 255, 255); /* 设置颜色为白色 */
+}
+.bio::selection{
+    color: rgb(25, 88, 182); /* 设置选中后的颜色为蓝色 */
+}

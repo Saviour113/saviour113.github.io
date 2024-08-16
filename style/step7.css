@@ -1,0 +1,7 @@
+/* 导航栏样式 */
+.nav {
+    background: #fff; /* 设置导航栏背景色为白色 */
+    height: 60px; /* 设置导航栏高度为60px */
+    border-bottom: 1px solid #e9ecef; 
+    /* 设置导航栏底部边框为1px灰色 */
+}

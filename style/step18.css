@@ -1,0 +1,11 @@
+/* 当屏幕宽度小于或等于768px时，应用以下样式 */
+@media (max-width: 768px) {
+    .container-flex ul:first-child {
+        flex-grow: 1; /* 伸展剩余空间 */
+        text-align: center; /* 文本居中 */
+    }
+    
+    .bq {
+        width: 100%; /* 设置宽度为100% */
+    }
+}

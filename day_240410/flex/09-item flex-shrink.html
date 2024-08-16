@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex item 项目属性 - flex-shrink</title>
+    <link rel="stylesheet" href="style/00.css">
+    <style>
+        .item {
+            /*
+                flex-shrink 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+             */
+             flex-shrink: 1;
+        }
+        .item:first-child {
+            flex-shrink: 1;
+        }
+        .item:last-child {
+            flex-shrink: 1;
+        }
+        .item:nth-child(2) {
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex item 项目属性 - flex-grow</title>
+    <link rel="stylesheet" href="style/00.css">
+    <style>
+        .item {
+            /*
+                flex-grow 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+             */
+             flex-grow: 0;
+        }
+        .item:first-child {
+            flex-grow: 0;
+        }
+        .item:last-child {
+            flex-grow: 0;
+        }
+        .item:nth-child(2) {
+            flex-grow: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+    
+</body>
+</html>

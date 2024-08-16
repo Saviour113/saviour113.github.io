@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+.flex-container {
+    height: 100%;
+    display: flex;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    margin: 1rem;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

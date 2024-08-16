@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #050f2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-toggler {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .hamburger-toggler .hamburger-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-icon span {
+    display: block;
+    width: 40px;
+    height: 3px;
+    position: relative;
+    background-color: #ffffff;
+    transition: background-color 0.35s 0s ease-out;
+  }
+
+  .hamburger-icon span::before,
+  .hamburger-icon span::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: top 0.2s 0.4s ease-out, left 0.2s 0.2s ease-out,
+      right 0.2s 0.2s ease-out, width 0.2s 0.2s ease-out,
+      transform 0.2s ease-out;
+  }
+
+  .hamburger-icon span::before {
+    top: 12px;
+    left: 20px;
+  }
+
+  .hamburger-icon span::after {
+    top: -12px;
+    right: 20px;
+  }
+
+  .hamburger-toggler.active .hamburger-icon span {
+    background-color: transparent;
+  }
+
+  .hamburger-toggler.active .hamburger-icon span::before,
+  .hamburger-toggler.active .hamburger-icon span::after {
+    top: 0;
+    width: 40px;
+    transition: top 0.2s ease-out, left 0.2s 0.2s ease-out,
+      right 0.2s 0.2s ease-out, width 0.2s 0.2s ease-out,
+      transform 0.2s 0.4s ease-out;
+  }
+
+  .hamburger-toggler.active .hamburger-icon span::before {
+    left: 0;
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+
+  .hamburger-toggler.active .hamburger-icon span::after {
+    right: 0;
+    transform: rotate3d(0, 0, 1, -45deg);
+  }

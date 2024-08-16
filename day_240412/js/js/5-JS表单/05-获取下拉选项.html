@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>获取下拉选项</title>
+	</head>
+	<body>
+		来自:
+				<select id="ufrom" name="ufrom">
+					<option value="" >请选择</option>
+					<option value="beijing" selected="selected">北京</option>
+					<option value="shanghai">上海</option>
+					<option >福建</option>
+				</select><br />
+				<button type="button" id="sub" >获取</button>
+	</body>
+	<!--
+		获取下拉选项
+			1. 获取下拉框（id属性值、name属性值、class属性值、元素）
+			2. 获取下拉框的所有下拉选项
+				下拉框对象.options
+			3. 获取下拉框被选中项的索引
+				下拉框对象.selectedindex
+			4. 获取被选中项的值
+				注意：当通过options获取选中项的value属性值时，
+					若没有value属性，则取option标签的内容
+					若存在value属性，则取value属性的值
+			5. 获取被选中项的文本
+
+				选中状态设定：selected='selected'、selected=true、selected
+					未选中状态设定：不设selected属性
+
+	 -->
+	 <script type="text/javascript">
+
+		document.getElementById("sub").onclick = function(){
+			// 1. 获取下拉框（id属性值、name属性值、class属性值、元素）
+			var ufrom = document.getElementById("ufrom");
+			// 2. 获取下拉框的所有下拉选项
+			var selectoptions = ufrom.options;
+			console.log(selectoptions);
+			// 3. 获取下拉框被选中项的索引
+			var index = ufrom.selectedIndex;
+			console.log(index);
+			// 4. 获取被选中项的值
+			var val = selectoptions[index].value;
+			console.log(val);
+			// 5. 获取被选中项的文本
+			var txt = selectoptions[index].text;
+			console.log(txt);
+
+			// 获取当前被选中项的值
+			var selectedvalue = ufrom.value;
+			console.log(selectedvalue);
+
+			// 设置下拉选项被选中
+			selectoptions[2].selected = true;
+
+		}
+	 </script>
+</html>

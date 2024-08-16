@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>函数</title>
+</head>
+
+<body>
+</body>
+
+<!-- 
+	函数
+		函数的定义
+			有三种函数定义的方式：函数声明语句、函数定义表达式、Function构造函数
+			1. 函数声明语句
+				function 函数名([参数列表]) {
+					
+				}
+			2. 函数定义表达式
+				var 变量名 = function([参数列表]) {
+					
+				}
+			3. Function构造函数
+				var 变量名 = new Function('a','b','return (a+b)');
+				
+			注：
+				1.如果使用函数声明语句这种方式声明函数，会具有函数名提升的效果。
+				2.JS中方法没有重载，如果出现同名方法则覆盖。
+				
+		函数的参数
+			- 实参可以省略，那么对应形参为undefined
+			- 若函数形参同名（一般不会这么干）：在使用时以最后一个值为准。
+			- 可以给参数默认值：当参数为特殊值时，可以赋予默认值。
+			- 参数为值传递，传递副本  ；引用传递时传递地址，操作的是同一个对象。
+			
+		函数的调用
+			1. 常用调用方式：函数名([参数列表]);
+			2. 函数调用模式
+			3. 对象调用模式
+			
+		函数的返回
+			1. 如果函数有返回值，需要通过return返回
+			2. 如果函数不需要返回数据时，则无返回值，或者说返回undefinded
+			3. 如果函数不需要返回值时，使用return，则表示结束方法
+			作用：
+				1.返回结果给调用者
+				2.结束语句
+		函数的作用域 （在JS中只有函数有作用域）
+			1. 全局变量与局部变量同名问题
+			2. 在函数中定义变量时，若没有加var关键字，使用之后自动变为全局变量
+					
+						
+		
+	 -->
+<script type="text/javascript">
+
+	/* 函数的定义 */
+	// 1. 函数声明语句
+	function test() {
+		console.log("函数声明语句...");
+	}
+	test(); // 调用函数
+	function test2(a) {
+		console.log(a);
+	}
+	test2(1);
+
+	// 2. 函数定义表达式
+	var test3 = function () {
+		console.log("函数定义表达式...");
+	}
+	test3();
+	var test4 = function (a, b) {
+		console.log(a, b);
+	}
+	test4(4, 20);
+
+	// Function构造函数
+	var test5 = new Function('a', 'b', 'c', 'return (a+b);');
+	var num = test5(1, 2, 3);
+	console.log(num);
+
+
+	console.log("=======函数的参数========");
+	// 实参可以省略，那么对应形参为undefined
+	function fn(str) {
+		console.log(str); // undefined
+	}
+	fn();
+	// 若函数形参同名（一般不会这么干）：在使用时以最后一个值为准。
+	function fn2(a, a) {
+		console.log(a);
+	}
+	fn2(1, 2);
+
+	// 可以给参数默认值：当参数为特殊值时，可以赋予默认值。
+	function fn3(a) {
+		a = a || "a";
+		return a;
+	}
+	var a1 = fn3();
+	console.log(a1);
+	var a2 = fn3(100);
+	console.log(a2);
+
+	// 参数为值传递，传递副本  ；引用传递时传递地址，操作的是同一个对象。
+	// 值传递
+	var n = 10;
+	function fn4(num) {
+		num = 20;
+	}
+	fn4(n);
+	console.log(n);
+
+	// 引用传递
+	var obj = {
+		uname: "zhangsan",
+		upwd: "123456"
+	};
+	function fn5(o) {
+		o.uname = "lisi"; // 修改对象中的属性值
+	}
+	fn5(obj);
+	console.log(obj);
+
+
+	console.log("========函数的调用========");
+	// 函数调用模式
+	function add(a, b) {
+		return a + b;
+	}
+	var sum = add(10, 20);
+	console.log(sum);
+
+	// 对象调用对象
+	var ob = {
+		name: "zs",
+		age: 18,
+		sex: true,
+		test: function () {
+			console.log("对象调用对象...");
+		}
+	};
+	ob.test();
+
+	console.log("======函数作用域=======");
+	if (true) {
+		var aa = 1;
+	}
+	if (true) {
+		console.log(aa);
+	}
+
+	// 1. 全局变量与局部变量同名问题
+	// 2. 在函数中定义变量时，若没有加var关键字，使用之后自动变为全局变量
+	var bb = 10; // 全局变量
+	function abc(b) {
+		var b = 100;  // 局部变量
+		var bb = 200; // 局部变量 与全局变量bb没有关系，相当于新声明的变量
+		console.log(bb); // 就近原则
+		c = 12; // 没有var修饰符，则是全局变量
+	}
+	abc(bb);
+	// console.log(b); //  b is not defined
+	console.log(bb); // 只能获取全局变量
+	console.log(c);
+</script>
+
+</html>

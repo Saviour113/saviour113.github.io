@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>获取节点</title>
+	</head>
+	<body>
+		<!--
+			注意：操作 dom 必须等节点初始化完毕后，才能执行。
+				处理方式两种:
+					（1）把 script 调用标签移到html末尾即可；
+					（2）使用onload事件来处理JS，等待html 加载完毕再加载 onload 事件里的 JS。
+
+			getElementById()			根据id获取dom对象，如果id重复，那么以第一个为准
+			getElementsByTagName()		根据标签名获取dom对象数组
+			getElementsByClassName()	根据样式名获取dom对象数组
+			getElementsByName()			根据name属性值获取dom对象数组，常用于多选获取值
+
+			说明：href="javascript:void(0)"：伪协议，表示不执行跳转，而执行指定的点击事件。
+		 -->
+
+			<p id="p1" class="para">这是一个段落<span>文本</span></p>
+		 	<p class="para">这又是一个段落</p>
+		 	<input type="text" name="txt" />
+		 	<input type="checkbox" name="hobby" value="游泳" />游泳
+		 	<input type="checkbox" name="hobby" value="篮球" />篮球
+		 	<input type="checkbox" name="hobby" value="足球" />足球
+		 	<hr />
+		 	<a href="javascript:void(0)" onclick="testById()">按照id获取</a>
+		 	<a href="javascript:void(0)" onclick="testByName()">按照name获取</a>
+		 	<a href="javascript:void(0)" onclick="testByTagName()">按照标签名获取</a>
+		 	<a href="javascript:void(0);" onclick="testByClass();">按照class获取</a>
+
+		<script type="text/javascript">
+			/**
+			 * 按照id获取
+			 *  如果获取元素时，id有多个，则以第一个为准
+			 */
+			function testById(){
+				var p = document.getElementById("p1");
+				console.log(p);
+			}
+
+			/**
+			 * 按照name获取
+			 */
+			function testByName(){
+				var hobbys = document.getElementsByName("hobby");
+				console.log(hobbys[0]);
+				console.log(hobbys[1]);
+				console.log(hobbys[2]);
+			}
+
+			/**
+			 * 按照标签名获取
+			 */
+			function testByTagName() {
+				var inputs = document.getElementsByTagName("input");
+				console.log(inputs);
+				// 获取元素类型
+				for(var i = 0; i < inputs.length; i++){
+					console.log(inputs[i].type); // input的类型
+					console.log(inputs[i].value); // input的值
+					if (inputs[i].type == "checkbox") {
+						console.log(inputs[i].checked); // 单选框或复选框是否选中
+					}
+				}
+			}
+
+			/**
+			 * 按照class获取
+			 */
+			function testByClass(){
+				var clas = document.getElementsByClassName("para");
+				console.log(clas.length);
+			}
+		</script>
+	</body>
+</html>

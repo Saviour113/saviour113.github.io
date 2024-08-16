@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>插入节点</title>
+	</head>
+	<body>
+		<ul>
+			<li id="red">红色</li>
+			<li>绿色</li>
+		</ul>
+	</body>
+	<!--
+		插入节点
+			write()			将任意的字符串插入到文档中
+			insertBefore()	向指定的已有的节点之前插入新的节点
+							newItem：要插入的节点
+							exsitingItem：参考节点
+							需要参考父节点
+	 -->
+	 <script type="text/javascript">
+		// write()		将任意的字符串插入到文档中
+		document.write("<h2>你好</h2>");
+		document.write("<h2>Hello</h2>");
+
+		// insertBefore()	向指定的已有的节点之前插入新的节点
+		var li = document.createElement("li");
+		var txt = document.createTextNode("粉色");
+		li.appendChild(txt);
+		document.getElementById("red").parentElement.insertBefore(li,document.getElementById("red"))
+	 </script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 动画</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        .box {
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+            background-color:red;
+        }
+
+        .box:first-child:hover {
+            animation-name: sb;
+            animation-duration: 4s;
+        }
+        @keyframes sb {
+            from {background-color: red;}
+            to {background-color: yellow;}
+        }
+    
+
+        @keyframes a2 {
+            0%   {background-color: red;}
+            25%  {background-color: yellow;}
+            50%  {background-color: blue;}
+            100% {background-color: green;}
+        }
+        .box:nth-child(2):hover {
+            animation-name: a2;
+            animation-duration: 4s;
+        }
+
+        @keyframes a3 {
+            0%   {background-color:red; width:100px; height:100px;}
+            25%  {background-color:yellow; width:120px; height:130px;}
+            50%  {background-color:blue; width:150px; height:140px;}
+            75%  {background-color:green; width:120px; height:110px;}
+            100% {background-color:red; width:100px; height:100px;}
+        }
+        .box:nth-child(3):hover {
+            animation-name: a3;
+            animation-duration: 4s;
+        }
+
+
+        .box:nth-child(4):hover {
+            animation-name: a2;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+
+        .box:nth-child(5):hover {
+            animation-name: a3;
+            animation-duration: 4s;
+            animation-iteration-count: 2;
+        }
+
+
+        .box:nth-child(6):hover {
+            animation-name: a3;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">a1</div>
+    <div class="box">a2</div>
+    <div class="box">a3</div>
+    <div class="box">delay</div>
+    <div class="box">count=2</div>
+    <div class="box">infinite</div>
+
+    <a href="https://www.runoob.com/css3/css3-animations.html" target="_blank">css3 animations</a>
+</body>
+</html>

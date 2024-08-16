@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组</title>
+	</head>
+	<body>
+	</body>
+	<!-- 
+		数组
+			数组的定义
+				var arr = [值1,值2,值3];  // 隐式创建
+				var arr = new Array(值1,值2,值3); // 直接实例化
+				var arr = new Array(size); // 创建数组并指定长度
+			
+			数组的特点	
+				1. 长度可变
+				2. 数组中数据类型任意
+				3. 索引从0开始
+				4. 可以使用任意字符当作数组的索引，如果索引是非正整数，我们称之为数组的属性，属性不影响数组的长度。
+				
+			基本操作
+				1. 数组的长度可以通过length属性获取，长度可以任意修改
+					获取长度：数组.length
+					设置长度：数组.length = 新长度
+				2. 获取数组中元素通过索引获取，索引可以越界
+					获取元素：数组[下标]
+					设置元素：数组[下标] = 值
+					
+			数组的遍历
+				1. 普通的for循环遍历
+					for(var i=0; i<=数组.length-1; i++){
+						
+					}
+				2. for...in..
+					for(var 下标(名称任意) in 数组名){ 
+						数组名[下标]是获取元素
+					} // 下标(名称任意)
+				3. forEach
+					数组名.forEach(function(element,index){
+							element表示当前元素
+							index表示索引
+					}
+					
+			了解内容：
+				如果下标：
+					1.为非负整数(包括整数字符串)：自动从0开始,不存在添加 undefined
+					2.为负数、小数、非数字符串：这些内容不计算在长度内，当成"属性"处理，相当于自定义属性。
+				
+				数组非常灵活，使用数组元素
+					1.下标: 非负整数(包括整数字符串)： 
+						数组.下标
+						数组[下标]
+					2.下标：负数、小数、非数字字符串：
+				    	数组[属性]
+				
+				* for ——> 不遍历属性
+				* foreach ——>不遍历属性和索引中的undefined
+				* for in ——>不遍历索引中的undefined
+			
+	 -->
+	 <script type="text/javascript">
+	 	
+		/* 数组的定义 */
+		// 隐式创建
+		var arr = [];
+		console.log(arr);
+		var arr2 = [1,'a',true];
+		console.log(arr2);
+		
+		// 直接实例化
+		var arr3 = new Array(1,2,3);
+		console.log(arr3);
+		
+		// 创建数组并指定长度
+		var arr4 = new Array(5);
+		console.log(arr4);
+		
+		/* 基本操作 */
+		
+		// 获取数组的长度
+		console.log(arr2.length);
+		// 设置数组的长度
+		arr2.length = 5;
+		console.log(arr2);
+		
+		// 获取数组的元素
+		console.log(arr2[0]);
+		console.log(arr2[10]);
+		// 设置元素
+		arr2[4] = 'zhangsan';
+		console.log(arr2);
+		// 设置属性
+		arr2['uname'] = "admin";
+		console.log(arr2);
+		
+		console.log("=========");
+		
+		/* 数组的遍历 */
+		// 普通的for循环遍历
+		for (var i = 0; i < arr2.length; i++) {
+			console.log(arr2[i]);
+		}
+		
+		console.log("==========");
+		// for... in 
+		for(var index in arr2) {
+			console.log(index);
+			console.log(arr2[index]);
+			console.log("-------");
+		}
+		console.log("=========");
+		// forEach
+		arr2.forEach(function(element,index){
+			console.log(element);
+			console.log(index);
+			console.log("-------");
+		})
+
+		
+		
+	 </script>
+</html>

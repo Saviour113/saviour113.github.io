@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>location对象</title>
+	</head>
+	<body>
+		<button type="button" onclick="test()">跳转</button>
+		<button type="button" onclick="test1()">replace</button>
+		<button type="button" onclick="test2()">reload</button>
+	</body>
+	<!--
+			location 对象的属性
+				href：设置或返回完整的 URL
+
+				location对象的方法
+					reload()：重新加载当前文档。
+					replace()：用新的文档替换当前文档。(不能后退)
+	 -->
+	 <script type="text/javascript">
+
+		// 获取当前访问的URL
+		var url = window.location.href;
+		console.log(url);
+
+		function test(){
+			// 设置URL  页面跳转
+			// window.location.href = "01-系统对话框.html";
+			window.location.href = "http://www.baidu.com";
+		}
+
+		/**
+		 * replace()：用新的文档替换当前文档。(不能后退)
+		 */
+		function test1(){
+			window.location.replace("01-系统对话框.html");
+		}
+		/**
+		 * reload()：重新加载当前文档。
+		 */
+		function test2(){
+			window.location.reload();
+		}
+	 </script>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<!--
+		 创建节点
+			createElement()			创建一个新的节点，需要传入节点的标签名称，返回创建的元素对象
+			createTextNode()		创建一个文本节点，可以传入文本内容
+			innerHTML 				也能达到创建节点的效果，直接添加到指定位置了
+
+		插入节点
+			write()					将任意的字符串插入到文档中
+			appendChild()			向元素中添加新的子节点，作为最后一个子节点
+			insertBefore()			向指定的已有的节点之前插入新的节点
+										newItem：要插入的节点
+										exsitingItem：参考节点   需要参考父节点
+	 -->
+	<body>
+		<button onclick="addPara();">添加段落</button>
+		<button onclick="addImg();">添加图片</button>
+		<button onclick="addTxt();">添加文本框</button>
+		<button onclick="addOptions()">添加选项</button>
+		<select name="music">
+			<option value="-1">你心内的一首歌</option>
+			<option value="0">南山南</option>
+			<option value="1">喜欢你</option>
+		</select>
+		<hr />
+		<div id = "container">
+
+		</div>
+	</body>
+	<script type="text/javascript">
+	/**
+	 * 添加段落
+	 */
+	function addPara(){
+
+		// 获取容器
+		var div = document.getElementById("container");
+
+		/* 方式一 */
+		/* // 创建p元素
+		var p = document.createElement("p");
+		// 创建文本节点
+		var txt = document.createTextNode("这是一段文本");
+		// 将文本节点追加到元素节点中
+		p.appendChild(txt);
+		console.log(p);
+		// 将p标签设置到div中
+		div.appendChild(p); */
+
+		/* 方式二 */
+		/* // 创建p元素
+		var p = document.createElement("p");
+		// 给p元素赋值
+		p.innerHTML = "这是一段文本";
+		console.log(p);
+		// 将p标签设置到div中
+		div.appendChild(p); */
+
+
+		/* 方式三 */
+		var p = "<p>这是文本</p>";
+		div.innerHTML += p;
+	}
+
+	/**
+	 * 添加图片
+	 */
+	function addImg(){
+		// 获取容器
+		var div = document.getElementById("container");
+
+		/* 方式一 */
+		/* // 创建img元素
+		var img = document.createElement("img");
+		// 设置属性
+		img.src = "img/img1.jpg";
+		console.log(img);
+		// 设置宽高属性
+		img.width = 100;
+		img.height = 100;
+		// 将图片设置到div容器中
+		div.appendChild(img); */
+
+		/* 方式二 */
+		/* // 创建img元素
+		var img = document.createElement("img");
+		// 设置属性
+		img.setAttribute("src","img/img1.jpg");
+		// 将图片设置到div容器中
+		div.appendChild(img); */
+
+		/* 方式三*/
+		var img = "<img src='img/img1.jpg' />";
+		div.innerHTML += img;
+	}
+
+	/**
+	 * 添加文本框
+	 */
+	function addTxt(){
+
+		// 得到容器元素
+		var div = document.getElementById("container");
+
+		/* // 创建input元素
+		var inp = document.createElement("input");
+		// 指定input元素的类型
+		inp.type = "text"; // input类型：文本框
+		inp.value = "今天天气不错"; // 文本框的值
+		// 将input元素设置到容器中
+		div.appendChild(inp);
+		 */
+
+		/* // 创建input元素
+		var inp = document.createElement("input");
+		// 设置属性
+		inp.setAttribute("type","text");
+		inp.setAttribute("value","你好");
+		// 将input元素设置到容器中
+		div.appendChild(inp); */
+
+		var inp = "<input type='text' value='hello' />";
+		div.innerHTML += inp;
+	}
+
+	/**
+	 * 添加下拉框
+	 */
+	function addOptions(){
+		// 通过name属性值获取下拉框对象
+		var music = document.getElementsByName("music")[0];
+
+		/* // 创建下拉选项
+		var opt = document.createElement("option");
+		// 设置文本和值
+		opt.value="2";
+		opt.text= "晴天";
+		// 给下拉框添加下拉选项
+		music.appendChild(opt); */
+
+		/* // 创建下拉选项
+		var opt = document.createElement("option");
+		// 设置文本和值
+		opt.value="2";
+		opt.text= "青花瓷";
+		// 将option添加到下拉列表中
+		console.log(music.options);
+		music.options.add(opt); */
+
+		var opt = '<option value="2">千里之外</option>';
+		music.innerHTML += opt;
+	}
+	</script>
+</html>

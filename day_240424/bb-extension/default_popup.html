@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+  </head>
+
+  <body style="width: 280px;">
+    <h1>BB Extension</h1>
+    <p>Extension for bilibili</p>
+    <ul>
+        <li>https://www.bilibili.com/video/*</li>
+    </ul>
+    <p>支持功能</p>
+    <ol>
+        <li>
+            场景描述：只能调整特定的倍速<br>
+            插件解法：通过快捷键快速调整任意倍速<br>
+            快捷键用法：<br>
+              - 按下 u 键，每次增加 0.5 倍速<br>
+              - 按下 d 键，每次减少 0.5 倍速<br>
+              - 按下 0 键，回到正常 1.0 倍速<br>
+            <span style="color: green">完成状态：已完成</span>
+        </li>
+        <li>
+            场景描述：未登录状态下，观看 60 秒左右会自动弹出登录窗口并暂停视频<br>
+            插件解法：一旦监听到登录窗口被弹出，自动关闭它并自动重新播放视频<br>
+            <span style="color: green">完成状态：已完成</span>
+        </li>
+    </ol>
+    <script src="popup.js"></script>
+  </body>
+
+</html>

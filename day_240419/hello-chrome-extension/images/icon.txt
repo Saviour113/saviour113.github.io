@@ -1,0 +1,2 @@
+- https://fonts.google.com/specimen/Bungee+Spice?preview.text=h1
+- Chrome Extension Icon Generator

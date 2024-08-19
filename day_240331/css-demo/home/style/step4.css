@@ -1,0 +1,8 @@
+/* 导航栏列表项 */
+.nav li {
+    display: inline-block; /* 设置导航栏列表项为inline-block元素 */
+    list-style: none; /* 取消列表项前面的默认样式 */
+    height: 60px; /* 设置列表项高度为60px */
+    line-height: 60px; /* 设置列表项中的文本垂直居中 */
+    padding: 0 40px; /* 设置列表项左右内边距为40px */
+}

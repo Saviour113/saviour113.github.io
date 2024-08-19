@@ -1,0 +1,8 @@
+/* 引用区块中的文字 */
+blockquote span {
+    display: block; /* 设置为块元素 */
+    color: #333333; /* 设置字体颜色为黑色 */
+    font-style: normal; /* 取消字体倾斜 */
+    font-weight: bold; /* 设置字体加粗 */
+    margin-top: 16px; /* 上方外边距为16px */
+}

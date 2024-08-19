@@ -1,0 +1,5 @@
+/* 导航栏链接样式 */
+.nav-link {
+    color: #000; /* 设置链接颜色为黑色 */
+    text-decoration: none; /* 去掉链接下划线 */
+}

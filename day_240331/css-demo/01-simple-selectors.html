@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>基础选择器 - Element, Class, and ID Selectors</title>
+  <style>
+    /* 所有 h2 元素 */
+    h2 {
+      color: red;
+      text-align: center;
+    }
+
+
+    /* 所有 class="highlight" 的元素 */
+    .highlight {
+      font-size: 20px;
+      font-weight: bold;
+      font-style: italic;
+      background-color: green;
+      opacity: .6;
+    }
+
+    /* id="mainPoint" 的元素 */
+    #mainPoint {
+      font-size: 24px;
+      font-weight: bold;
+      background-color: red;
+      opacity: .7;
+    }
+
+    /* 所有的 p 和 h1 元素, */
+    p, h1 {
+      color: blue;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>一级标题 (h1)</h1>
+  <h2>二级标题 (h2)</h2>
+  <p class="highlight">
+    这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字。</p>
+  <p class="highlight">这是另一个段落， class="highlight". 这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字</p>
+  <h2>这个也是二级标题 (h2)</h2>
+  <p>这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字。
+  </p>
+  <div>This is the main point of the entire article. So, attribute
+    <span id="mainPoint">id="mainPoint".</span>
+  </div>
+
+</body>
+
+</html>

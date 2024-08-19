@@ -1,0 +1,7 @@
+/* 引用区块内的小字 */
+.small {
+    font-size: 12px; /* 设置字号为12px */
+    text-align: center; /* 设置居中对齐 */
+    color: gray; /* 设置字体颜色为灰色 */
+    margin-bottom: 8px; /* 设置下方外边距为8px */
+}

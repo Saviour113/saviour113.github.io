@@ -1,0 +1,12 @@
+/* 引用区块的样式 */
+blockquote {
+    font-size: 23px; /* 设置字号为23px */
+    font-family: Open Sans; /* 设置字体为Open Sans */
+    font-style: italic; /* 设置文字倾斜 */
+    color: #555555; /* 设置字体颜色为深灰色 */
+    padding: 18px 30px 18px 75px; /* 设置内边距，顺序分别为上右下左 */
+    border-left: 8px solid #78C0A8; /* 设置左侧边框为8px蓝色 */
+    line-height: 1.6; /* 设置行高为1.6倍 */
+    position: relative; /* 设置定位为相对定位 */
+    background: #EDEDED; /* 设置背景色为浅灰色 */
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Element with Class Selector
+  </title>
+  <style>
+    /* class="highlight" 的 h1 . */
+    h1.highlight {
+      background-color: green;
+    }
+
+    /* class="highlight" 的 p */
+    p.highlight {
+      font-style: italic;
+    }
+
+    /* class='highlight' and, class 'mainpoint'. */
+    .highlight, .mainpoint {
+      color: red;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 class="highlight">Element with Class Selector</h1>
+  <p>这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字，这是一个段落，一段随机文字。
+  </p>
+  <p class="highlight">This is P with CLASS="highlight"</p>
+  <div class="mainpoint highlight">This is the main point of the entire article.
+  </div>
+
+</body>
+
+</html>

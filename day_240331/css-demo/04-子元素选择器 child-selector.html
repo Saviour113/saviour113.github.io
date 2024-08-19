@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>子元素选择器</title>
+  <style>
+    /* section 元素下的所有直接 article 子元素 > */
+    section > article {
+      color: green;
+      font-size: 24px;
+    }
+
+    /* section 元素下的所有直接 h2 子元素> */
+    section > h2 {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>子元素选择器</h1>
+  <section>
+    <h2>二级标题 1</h2>
+    <div>
+      <article>ARTICLE which inside DIV, which is inside SECTION</article>
+    </div>
+  </section>
+  <section>
+    <article>ARTICLE as a direct child of the SECTION element.</article>
+  </section>
+  <h2>二级标题 2</h2>
+
+</body>
+
+</html>

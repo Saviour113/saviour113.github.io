@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组方法</title>
+	</head>
+	<body>
+	</body>
+	<!-- 
+		push          添加元素到最后 
+		unshift       添加元素到最前 
+		pop           删除最后一项 
+		shift         删除第一项 
+		reverse       数组翻转 
+		join          数组转成字符串 
+		indexOf       数组元素索引 
+		slice         截取（切片）数组，原数组不发生变化 
+		splice        剪接数组，原数组变化，可以实现前后删除效果 
+		concat        数组合并
+		
+	 -->
+	 
+	 <script type="text/javascript">
+	 	// 定义数组
+		var arr = [1,2,'a',3,'b'];
+		
+		// push          添加元素到最后
+		arr.push('c');
+		// unshift       添加元素到最前 
+		arr.unshift(0);
+		// pop           删除最后一项 
+		arr.pop();
+		//  shift         删除第一项 
+		arr.shift();
+		// reverse       数组翻转 
+		var arr2 = arr.reverse();
+		// join          数组转成字符串 
+		var str = arr.join('-');
+		// indexOf       数组元素索引 
+		var index = arr.indexOf('a');
+		// slice         截取（切片）数组，原数组不发生变化 
+		var arr3 = arr.slice(2,5);
+		// splice        剪接数组，原数组变化，可以实现前后删除效果 
+		var arr4 = arr.splice(1,2,'aa','bb')
+		//  concat        数组合并
+		var arr5 = [100,200];
+		var arr6 = arr.concat(arr5);
+		
+		
+		console.log(arr);
+		console.log(arr2);
+		console.log(str);
+		console.log(index);
+		console.log(arr3);
+		console.log(arr4);
+		console.log(arr6);
+		
+		
+	 </script>
+	 
+</html>

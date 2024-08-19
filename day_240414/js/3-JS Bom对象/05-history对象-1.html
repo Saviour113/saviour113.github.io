@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>history对象</title>
+	</head>
+	<body>
+		<h2>页面1</h2>
+		<a href="05-history对象-2.html">页面2</a>
+		<hr >
+		<button type="button" onclick="window.history.go(2)">前进2</button>
+	</body>
+	<!--
+		history对象的属性：length，返回浏览器历史列表中的 URL 数量。
+
+	 		history对象的方法：
+		 		back()：
+				加载 history 列表中的前一个 URL。
+		 		forward()：
+				加载历史列表中的下一个 URL。当页面第一次访问时，还没有下一个url。
+		 		go(number|URL):
+				URL 参数使用的是要访问的 URL。而 number 参数使用的是要访问的 URL 在 History 的 URL 列表中的相对位置。go(-1)，到上一个页面
+	 -->
+	 <script type="text/javascript">
+	 	console.log(window.history.length);
+	 </script>
+</html>

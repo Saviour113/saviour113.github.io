@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>获取多选按钮</title>
+	</head>
+	<body>
+		<input type="checkbox" name="hobby" value="sing" />  唱歌
+		<input type="checkbox" name="hobby" value="dance" />  跳舞
+		<input type="checkbox" name="hobby" value="rap" />  说唱
+		<button type="button" onclick="getCheckbox()">获取</button>
+	</body>
+	<!--
+		(1)获取多选按钮组
+			document.getElementsByName("name属性值");
+		(2)遍历每个多选按钮，并查看多选按钮元素的checked属性
+
+			选中状态：	checked='checked'  checked   cheked=true
+			未选中状态：	未设置checked属性或checked=false
+
+	 -->
+	 <script type="text/javascript">
+	 	function getCheckbox(){
+			// (1)获取多选按钮组
+			var checkboxs = document.getElementsByName("hobby");
+			var str = '';
+			// (2)遍历每个多选按钮，并查看多选按钮元素的checked属性
+			for(var i = 0; i < checkboxs.length; i++){
+				// 如果被选中，则获取对应的值
+				if (checkboxs[i].checked) {
+					str += checkboxs[i].value + ",";
+				}
+			}
+			// 通过截取，去除最后一个多余的问号
+			str = str.substring(0,str.length-1);
+			console.log(str);
+		}
+	 </script>
+</html>

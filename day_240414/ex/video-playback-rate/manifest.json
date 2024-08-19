@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Video playback rate Extension",
+  "version": "1.0",
+  "description": "Quickly increase or decrease video playback rate",
+
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["scripts/lib/jquery.min.js", "scripts/content.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+
+  "action": {
+    "default_popup": "default_popup.html",
+    "default_icon": "images/icon-16.png"
+  }
+}

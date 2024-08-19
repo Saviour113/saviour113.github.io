@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>打开窗口</title>
+</head>
+
+<body>
+	<button type="button" id="btn1">打开窗口</button>
+</body>
+<!--
+		打开窗口
+			window.open()方法既可以导航到一个特定的URL也可以用来打开一个新的窗口
+	 -->
+<script type="text/javascript">
+
+	document.getElementById("btn1").onclick = function () {
+		// 打开空白窗口
+		//window.open();
+		// 打开指定页面
+		//window.open("01-系统对话框.html");
+		// 打开百度
+		//window.open("http://www.baidu.com");
+		// 指定方式打开页面
+		//window.open("http://www.baidu.com", "_self");
+		// 打开页面
+		window.open("03-关闭窗口.html");
+	}
+</script>
+
+</html>

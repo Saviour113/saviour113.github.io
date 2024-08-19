@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据类型</title>
+	</head>
+	<body>
+	</body>
+	<!--
+		数  值（Number）： 整数和小数（比如 1 和 3.14）
+		字符串（String）： 字符组成的文本（比如"Hello World"）
+		布尔值（Boolean）：true（真）和 false（假）两个特定值
+		undefined：       表示“未定义”或不存在，即此处目前没有任何值
+		null：            表示空缺，即此处应该有一个值，但目前为空
+		对象（object）(引用) ： 各种值组成的集合
+		    1)、对象（object）{name:”zhangsan”,age:”18”}
+		    2)、数组（array）[1,2,3]
+		    3)、函数（function）function test() {}
+
+
+		undefined
+			表示值不存在
+			出现undefined的情况：
+				1. 当声明了变量但未赋值时，这个变量的值就是undefined
+				2. 调用函数（方法）时，函数有形参，但未提供实参，则参数为undefined
+				3. 函数没有返回值，默认返回undefined
+		null
+			表示空值
+			使用Null类型值时注意以下几点：
+				1）使用typeof操作符测试null返回object字符串。
+				2）undefined派生自null，所以等值比较返回值是true。未初始化的变量和赋值为null的变量相等。
+
+		布尔类型
+			true或false
+
+		数值型
+			数值型包括：整型和浮点型
+
+			1. 所有数字（整型和浮点型）都是以64位浮点类型存储的。所以在js中，1与1.0是相等的，1+1.0的值为2
+			2. 浮点类型最高精度是17位，浮点类型运算时可能不准确，不建议使用浮点型做判断
+			3. 在存储数值时会自动将整型的浮点数值（1.0）转换成整型（1）
+
+		字符串
+			使用 ' ' 或 " "引起来，如：'hello'，"good"。
+
+		对象
+			{}
+	 -->
+
+	 <script type="text/javascript">
+	 	/* undefined  */
+		// 1. 当声明了变量但未赋值时，这个变量的值就是undefined
+		var str;
+		console.log(str); // undefined
+		// 2. 调用函数（方法）时，函数有形参，但未提供实参，则参数为undefined
+		function test(str) { // 有形参
+			console.log(str); // undefined
+		}
+		// 调用方法
+		test(); // 未提供实参
+		// 3. 函数没有返回值，默认返回undefined
+		var t = test(1);
+		console.log(t); // undefined
+
+
+		/* null */
+		var a = 1;
+		var b = true;
+		console.log(typeof a); // number
+		console.log(typeof b); // boolean
+
+		// 1）使用typeof操作符测试null返回object字符串。
+		var c = null;
+		console.log(null);
+		console.log(typeof null); // object
+
+		// 2）undefined派生自null，所以等值比较返回值是true。未初始化的变量和赋值为null的变量相等。
+		var d;
+		console.log(d);
+		console.log(c == d);
+
+		console.log("================");
+		/* 数值型 */
+		// 所有数字（整型和浮点型）都是以64位浮点类型存储的。所以在js中，1与1.0是相等的，1+1.0的值为2
+		console.log(1==1.0); // true
+		console.log(1+1.0); // 2
+		// 在存储数值时会自动将整型的浮点数值（1.0）转换成整型（1）
+		var s = 1.0;
+		console.log(s);
+	 </script>
+</html>

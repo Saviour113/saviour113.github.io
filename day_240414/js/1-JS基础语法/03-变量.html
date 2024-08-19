@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>变量</title>
+</head>
+<body>
+</body>
+<!--
+    变量
+        JS是一种弱类型语言，在声明变量时不需要指定数据类型，直接使用var修饰符声明变量。
+
+        变量的声明
+            1. 声明并赋值
+            2. 先声明再赋值
+
+        变量的注意点
+            1. 当变量只声明而未赋值时，则变量的值会返回undfinded
+            2. 变量要有定义才能使用，若变量未声明就使用，JavaScript会报错，告诉你变量未定义。
+            3. 可以在同一条var命令中声明多个变量。
+            4. 若使用var重新声明一个已经存在的变量，是无效的。
+            5. 若使用var重新声明一个已经存在的变量且赋值，则会覆盖掉前面的值
+            6. JavaScript是一种动态类型、弱类型语言，也就是说，变量的类型没有限制，可以赋予各种类型的值。
+
+        变量提升
+            JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。
+            这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升。
+            注：只有用var声明的变量，才会变量声明。
+
+ -->
+
+<script type="text/javascript">
+    /* 变量的声明 */
+    // 1. 声明并赋值
+    var str = "Hello World";
+    console.log(str);
+    // 2. 先声明再赋值
+    var str2; // 声明
+    str2 = "hello"; // 赋值
+
+    /* 变量的注意点 */
+    // 1. 当变量只声明而未赋值时，则变量的值会返回undfinded
+    var a;
+    console.log(a); // undefined
+
+    // 变量要有定义才能使用，若变量未声明就使用，JavaScript会报错，告诉你变量未定义。
+    // console.log(b); //  b is not defined
+
+    // 3. 可以在同一条var命令中声明多个变量。
+    var aa = 1, bb = 2, cc = 10, dd = 5;
+    console.log(aa, bb, cc, dd);
+
+    // 4. 若使用var重新声明一个已经存在的变量，是无效的。
+    var str;
+    console.log(str);
+
+    // 5. 若使用var重新声明一个已经存在的变量且赋值，则会覆盖掉前面的值
+    var str = '你好';
+    console.log(str);
+
+    // 6. JavaScript是一种动态类型、弱类型语言，也就是说，变量的类型没有限制，可以赋予各种类型的值。
+    var flag = true;
+    console.log(true);
+
+
+    /* 变量提升 */
+    console.log(uname);
+    var uname = "zhangsan"; // undefined
+
+    var uname;
+    console.log(uname);
+    uname = "zhangsan";
+
+    // 只有用var声明的变量，才会变量声明。
+    // upwd = "123456";
+    console.log(upwd);
+    // upwd = "123456";
+
+</script>
+
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>类型转换</title>
+	</head>
+	<body>
+	</body>
+	<!--
+		函数转换
+			parseInt()
+				在转换之前，首先会分析该字符串，判断位置为0处的字符，判断它是否是个有效数字，如果不是，则直接返回NaN，不再继续，如果是则继续，直到找到非字符
+			parseFloat()
+				在转换之前，首先会分析该字符串，判断位置为0处的字符，判断它是否是个有效数字，如果不是，则直接返回NaN，不再继续，如果是则继续，直到找到非字符
+				可以识别第一个小数点
+
+		显式转换
+			toString()函数可以将数字转换为字符串。
+			Number还提供了toFixed()函数将根据小数点后指定位数将数字转为字符串，四舍五入
+
+			构造方法
+				JS 为 Number、Boolean、String 对象提供了构造方法，用于强制转换其他类型的数据。此时操作的是整个数据，而不是部分。
+
+			强制类型转换方法 String() 是最简单的，因为它可把任何值转换成字符串。
+
+			最简单的转字符串的方式，往任意数据数据后面+""
+
+	 -->
+
+	 <script type="text/javascript">
+
+		/* parseInt() */
+		console.log(parseInt("123abc"));
+		console.log(parseInt("123.45"));
+		console.log(parseInt("abc")); // NaN
+
+		/* parseFloat() */
+		console.log(parseFloat("123abc"));
+		console.log(parseFloat("123.45"));
+		console.log(parseFloat("abc")); // NaN
+		console.log(parseFloat("12.34.56"));
+
+		console.log("=============");
+		/* 显式转换 */
+		// toString
+		var data = 10;
+		console.log(data);
+		console.log(data.toString());
+		var data1 = null;
+		// console.log(data1.toString()); // Cannot read property 'toString' of null
+
+		// toFixed()
+		var data2 = 1.4;
+		console.log(data2.toFixed(0)); // 1
+		var data3 = 1.46;
+		console.log(data3.toFixed(1));  // 1.5
+
+		console.log("==========");
+		// Number
+		console.log(Number( "5.5 ")); // 5.5
+		console.log(Number( "56 ")); // 56
+		console.log(Number( "5.6.7 ")); // NaN
+
+
+		// 将任意值转换成字符串，包括null和undefinded
+		var qq = null;
+		console.log(String(qq));
+		var flag = true;
+		console.log(flag+"");
+
+	 </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>获取表单</title>
+	</head>
+	<body>
+		<form id="form1" name="form1" method="get" action="">
+
+		</form>
+
+		<form id="form2" name="form2" method="get" action="">
+
+		</form>
+	</body>
+	<!--
+		获取表单
+			1、document.表单名称
+			2、document.getElementById(表单 id);
+			3、document.forms[表单名称]
+			4、document.forms[索引]; //从 0 开始
+	 -->
+	 <script type="text/javascript">
+	 	// 1、document.表单名称
+		var form1 = document.form1;
+		console.log(form1);
+		// 2、document.getElementById(表单 id);
+		var form2 = document.getElementById("form2");
+		console.log(form2);
+
+		// 得到当前文档中的表单集合
+		var forms = document.forms;
+		console.log(forms);
+
+		// 3、document.forms[表单名称]
+		var form3 = forms['form1'];
+		console.log(form3);
+
+		// 4、document.forms[索引]; //从 0 开始
+		var form4 = forms[0];
+		console.log(form4);
+	 </script>
+</html>

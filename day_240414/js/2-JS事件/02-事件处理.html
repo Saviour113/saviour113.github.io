@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>事件处理程序</title>
+	</head>
+	<body>
+		<!-- 1. HTML事件处理程序 -->
+		<button type="button" onclick="alert('Hello')" onmouseover="console.log('mouseover')" onmouseout="test()">按钮</button>
+		<!-- 2. DOM 0级事件处理程序 -->
+		<button type="button" id="btn">DOM 0级事件处理程序</button>
+		<!-- 3. DOM 2级事件处理程序 -->
+		<button type="button" id="btn2">DOM 2级事件处理程序</button>
+	</body>
+	<!--
+		 事件处理程序
+			响应某个事件的函数就叫做事件处理程序（或事件侦听器）。事件处理程序的名字以“on”开头
+			1. HTML事件处理程序
+			2. DOM 0级事件处理程序
+				将一个函数赋值给一个事件处理程序属性
+				只能为同一个元素的同一个事件设定一个事件程序（覆盖）
+			3. DOM 2级事件处理程序
+				addEventListener()  和  removeEventListener()
+				有三个参数：
+					参数1：事件名
+					参数2：处理事件的函数
+					参数3：事件冒泡（false）或捕获（true）
+				可以为同一个元素的同一个事件设定多个事件程序
+
+		document.getElementById("id属性值"); 通过id属性值获取元素对象
+	 -->
+	 <script type="text/javascript">
+	 	function test(){
+	 		console.log('鼠标移开了...');
+	 	}
+
+	 	/**
+	 	 * 加载事件
+	 	 * 	当页面上的标签和引入的资源加载完毕后，才会执行的方法
+	 	 */
+	 	window.onload = function(){
+	 		// 通过id属性值获取按钮对象
+	 		var btn = document.getElementById("btn");
+	 		console.log(btn);
+	 		// 给指定元素绑定点击事件
+	 		btn.onclick = function(){
+	 			console.log("DOM 0级事件处理程序...");
+	 		}
+	 		btn.onclick = function(){
+	 			console.log("test...");
+	 		}
+	 	}
+
+		// DOM 2级事件
+		var btn2 = document.getElementById("btn2");
+		// 给按钮绑定事件监听
+		btn2.addEventListener('click',function(){
+			console.log("DOM 2级事件...");
+		});
+		btn2.addEventListener('click',fn);
+		function fn(){
+			console.log("按钮被点击了...");
+		}
+		// 移除事件
+		btn2.removeEventListener("click",fn);
+	 </script>
+</html>

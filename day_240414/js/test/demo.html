@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change background color on click</title>
+</head>
+
+<body>
+    <input id="ipt" type="button" value="改变颜色">
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        //console.log(document.getElementById('ipt'));
+
+        // document.getElementById('ipt') // 原始的js写法
+        //$('#ipt'); // 引入 jQuery 的写法
+
+        $("#ipt").bind("click", function () {
+            $('body').css("background-color", "blue");
+        });
+        // 原生js绑定事件
+        /* document.getElementById("test").onclick = function(){
+            console.log("test...");
+        } */
+    </script>
+</body>
+
+</html>
